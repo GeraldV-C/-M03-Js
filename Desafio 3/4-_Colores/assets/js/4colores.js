@@ -28,7 +28,7 @@ document.addEventListener('keydown', function(event) {
     } else if (key=== 'w'){
         createNewDiv ('gray');
     } else if (key ==='e'){
-        createNewDiv ('brown');
+        createNewDiv ('#804000');
     }
 
     if (key ==='a'  || key === 's' || key === 'd' ) {
