@@ -76,28 +76,29 @@ const propiedades_venta = [
   function mostrarPropiedades(arreglo, contenedorId) {
     const contenedor = document.getElementById(contenedorId);
   
-    arreglo.forEach(propiedad => {
+    arreglo.forEach((perro,indice) => {
+        console.log ("perro:",indice,perro.nombre);
 
       const propiedadHTML = `
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="${propiedad.src}" class="card-img-top" alt="Imagen del departamento" />
+            <img src="${perro.src}" class="card-img-top" alt="Imagen del departamento" />
             <div class="card-body">
-              <h5 class="card-title">${propiedad.nombre}</h5>
-              <p class="card-text">${propiedad.descripcion}</p>
-              <p><i class="fas fa-map-marker-alt"></i> ${propiedad.ubicacion}</p>
+              <h5 class="card-title">${perro.nombre}</h5>
+              <p class="card-text">${perro.descripcion}</p>
+              <p><i class="fas fa-map-marker-alt"></i> ${perro.ubicacion}</p>
             <p>
-                <i class="fas fa-bed"></i> ${propiedad.habitaciones} Habitaciones |
-                <i class="fas fa-bath"></i> ${propiedad.baños} Baños
+                <i class="fas fa-bed"></i> ${perro.habitaciones} Habitaciones |
+                <i class="fas fa-bath"></i> ${perro.baños} Baños
              </p>  
-              <p><i class="fas fa-dollar-sign"></i> ${propiedad.costo}</p>
-              <p class="${propiedad.smoke ? 'text-success' : 'text-danger'}">
-                <i class="${propiedad.smoke ? 'fas fa-smoking' : 'fas fa-smoking-ban'}"></i> 
-                ${propiedad.smoke ? 'Permitido fumar' : 'No se permite fumar'}
+              <p><i class="fas fa-dollar-sign"></i> ${perro.costo}</p>
+              <p class="${perro.smoke ? 'text-success' : 'text-danger'}">
+                <i class="${perro.smoke ? 'fas fa-smoking' : 'fas fa-smoking-ban'}"></i> 
+                ${perro.smoke ? 'Permitido fumar' : 'No se permite fumar'}
               </p>
-              <p class="${propiedad.pets ? 'text-success' : 'text-danger'}">
-                <i class="${propiedad.pets ? 'fas fa-paw' : 'fas fa-ban'}"></i>
-                ${propiedad.pets ? 'Mascotas permitidas' : 'No se permiten mascotas'}
+              <p class="${perro.pets ? 'text-success' : 'text-danger'}">
+                <i class="${perro.pets ? 'fas fa-paw' : 'fas fa-ban'}"></i>
+                ${perro.pets ? 'Mascotas permitidas' : 'No se permiten mascotas'}
               </p>
             </div>
           </div>
@@ -116,4 +117,4 @@ const propiedades_venta = [
   if (document.getElementById('alquiler')) {
     mostrarPropiedades(propiedades_alquiler, 'alquiler');
   }
-  
+
